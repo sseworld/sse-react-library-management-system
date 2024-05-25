@@ -1,12 +1,12 @@
 import { Navigate } from "react-router-dom";
-import { useUser } from "../../context/user-context"
+import { useUser } from "../../context/user-context";
 
 export const WithAdminProtector = ({ children }) => {
-    const { isAdmin } = useUser()
+  const { isAdmin } = useUser();
 
-    if(isAdmin) {
-        return children
-    }
+  if (isAdmin) {
+    return children;
+  }
 
-    return <Navigate to="/" replace />
-}
+  return <Navigate to="/" replace />;
+};
