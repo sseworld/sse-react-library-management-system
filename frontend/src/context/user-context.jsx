@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import { NotificationManager } from "react-notifications";
+// import { NotificationManager } from "react-notifications";
 import { BackendApi } from "../client/backend-api";
 
 const UserContext = createContext({
@@ -33,9 +33,11 @@ const UserProvider = ({ children }) => {
   const loginUser = async (username, password) => {
     const { user, error } = await BackendApi.user.login(username, password);
     if (error) {
-      NotificationManager.error(error);
+      // NotificationManager.error(error);
+      console.log(error)
     } else {
-      NotificationManager.success("Logged in successfully");
+      // NotificationManager.success("Logged in successfully");
+      console.log("Logged in successfully")
       setUser(user);
     }
   };

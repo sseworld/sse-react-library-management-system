@@ -15,7 +15,7 @@ import {
   TableCell,
   TableRow,
 } from "@mui/material";
-import { NotificationManager } from "react-notifications";
+// import { NotificationManager } from "react-notifications";
 import { BackendApi } from "../../client/backend-api";
 import { useUser } from "../../context/user-context";
 import { TabPanel } from "../tabs/tab";
@@ -36,7 +36,9 @@ export const Book = () => {
         .borrowBook(book.isbn, user._id)
         .then(({ book, error }) => {
           if (error) {
-            NotificationManager.error(error);
+            // // NotificationManager.error(error);
+            console.log(error)
+            console.log(error)
           } else {
             setBook(book);
           }
@@ -51,7 +53,8 @@ export const Book = () => {
         .returnBook(book.isbn, user._id)
         .then(({ book, error }) => {
           if (error) {
-            NotificationManager.error(error);
+            // NotificationManager.error(error);
+            console.log(error)
           } else {
             setBook(book);
           }
@@ -66,7 +69,8 @@ export const Book = () => {
         .getBookByIsbn(bookIsbn)
         .then(({ book, error }) => {
           if (error) {
-            NotificationManager.error(error);
+            // NotificationManager.error(error);
+            console.log(error)
           } else {
             setBook(book);
           }

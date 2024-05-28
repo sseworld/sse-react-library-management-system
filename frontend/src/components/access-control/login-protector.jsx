@@ -1,4 +1,4 @@
-import { NotificationManager } from "react-notifications";
+// import { NotificationManager } from "react-notifications";
 import { Navigate } from "react-router-dom";
 import { useUser } from "../../context/user-context";
 
@@ -8,7 +8,8 @@ export const WithLoginProtector = ({ children }) => {
   if (user) {
     return children;
   } else {
-    NotificationManager.error("Please login to proceed!");
+    // NotificationManager.error("Please login to proceed!");
+    console.log("Please login to proceed!")
   }
 
   return <Navigate to="/" replace />;
