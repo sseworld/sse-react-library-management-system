@@ -1,0 +1,18 @@
+services:
+- type: web
+  name: sse-react-library-management-system
+  runtime: node
+  repo: https://github.com/sseworld/sse-react-library-management-system
+  plan: free
+  envVars:
+  - key: SESSION_SECRET
+    sync: false
+  - key: DB_NAME
+    sync: false
+  - key: DB_URI
+    sync: false
+  region: oregon
+  buildCommand: yarn
+  startCommand: yarn run start
+  rootDir: backend
+version: "1"

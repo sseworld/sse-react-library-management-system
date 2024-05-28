@@ -1,0 +1,10 @@
+services:
+- type: web
+  name: sse-react-library-management
+  runtime: static
+  repo: https://github.com/sseworld/sse-react-library-management-system
+  buildCommand: yarn run build
+  staticPublishPath: dist
+  autoDeploy: false
+  rootDir: frontend
+version: "1"
